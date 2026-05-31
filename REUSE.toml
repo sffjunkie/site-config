@@ -1,0 +1,15 @@
+version = 1
+SPDX-PackageName = "Looniversity Site Configuration"
+SPDX-PackageDownloadLocation = "https://github.com/sffjunkie/siteconfig"
+SPDX-PackageSupplier = "Person: Simon Kennedy"
+
+[[annotations]]
+path = "**"
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Simon Kennedy (https://github.com/sffjunkie/siteconfig/)"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "config/overlay/rofi-lwm-menu/rofi-lwm-menu.sh"
+SPDX-FileCopyrightText = "2020 Jaakko Luttinen (https://github.com/jluttine/rofi-power-menu/)"
+SPDX-License-Identifier = "MIT"

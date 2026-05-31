@@ -1,0 +1,50 @@
+{
+  config,
+  lib,
+  ...
+}:
+let
+  cfg = config.looniversity.service.immich;
+  postgresqlHost = lib.looniversity.network.serviceHandlerHost config "postgresql";
+  inherit (lib) mkEnableOption mkIf;
+  inherit (lib.looniversity) enabled;
+in
+{
+  options.looniversity.service.immich = {
+    enable = mkEnableOption "immich";
+  };
+
+  config = mkIf cfg.enable {
+    sops.templates."immich_env_file" = {
+      content = ''
+        DB_PASSWORD=${config.sops.placeholder."immich/db_password"}
+      '';
+    };
+
+    services.immich = {
+      enable = true;
+      host = "0.0.0.0";
+      port = 2283;
+      openFirewall = true;
+      secretsFile = config.sops.templates."immich_env_file".path;
+      user = "immich";
+
+      database = {
+        enable = true;
+        host = postgresqlHost;
+        name = "immich";
+        user = "immich";
+
+        enableVectors = false;
+      };
+    };
+
+    looniversity = {
+      mount = {
+        pictures = enabled;
+      };
+
+      db.postgresql.hostDatabases.thebrain = [ "immich" ];
+    };
+  };
+}

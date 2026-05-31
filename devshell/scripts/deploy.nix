@@ -1,0 +1,42 @@
+{
+  lib,
+  pkgs,
+  ...
+}:
+let
+  script = pkgs.writeShellScriptBin "nod" ''
+    usage() {
+      echo "$0 host ip"
+      exit 1
+    }
+
+    [[ -z "$1" ]] && usage
+
+    host_name=$1
+
+    [[ -z "$2" ]] && host_ip="$host_name" || host_ip="$2"
+
+    # Create a temporary directory
+    temp=$(mktemp -d)
+
+    # Function to cleanup temporary directory on exit
+    cleanup() {
+      rm -rf "$temp"
+    }
+    trap cleanup EXIT
+
+    # Create the directory where sshd expects to find the host keys
+    install -d -m755 "$temp/etc/ssh"
+
+    # Decrypt your private key from the password store and copy it to the temporary directory
+    ${lib.getExe pkgs.sops} decrypt --extract '["'"''${host_name}"'"]["ssh_host_ed25519_key"]' ./configuration/secret/host.yaml > "$temp/etc/ssh/ssh_host_ed25519_key"
+
+    # Set the correct permissions so sshd will accept the key
+    chmod 600 "$temp/etc/ssh/ssh_host_ed25519_key"
+
+    # Install NixOS to the host system with our secrets
+    echo "Deploying to ''${host_name} (''${host_ip})"
+    ${lib.getExe pkgs.nixos-anywhere} --extra-files "$temp" --flake '.#'"''${host_name}" --target-host "root@''${host_ip}"
+  '';
+in
+script
