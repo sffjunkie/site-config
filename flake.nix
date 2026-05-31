@@ -89,8 +89,6 @@
         ] (system: function nixpkgs.legacyPackages.${system});
 
       siteModules = [
-        # ./config/paths.nix
-
         (inputs.import-tree ./config/site)
         (inputs.import-tree ./config/option/site)
         (inputs.import-tree ./config/fixes)
@@ -101,11 +99,12 @@
         ./config/user/user/common/host
 
         inputs.disko.nixosModules.disko
-        inputs.sops-nix.nixosModules.sops
+        # inputs.sops-nix.nixosModules.sops
         inputs.stylix.nixosModules.stylix
         inputs.nurpkgs.modules.nixos.default
 
         inputs.site-secrets.nixosModules.default
+        inputs.site-secrets.nixosModules.api_key
         inputs.site-secrets.nixosModules.automation
         inputs.site-secrets.nixosModules.backup
         inputs.site-secrets.nixosModules.location
@@ -133,7 +132,6 @@
               };
 
               sharedModules = [
-                # ./config/paths.nix
                 ./config/user/user/common/home
 
                 inputs.sops-nix.homeManagerModules.sops

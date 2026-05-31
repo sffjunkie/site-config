@@ -1,5 +1,4 @@
 {
-  config,
   pkgs,
   ...
 }:
@@ -19,7 +18,6 @@
       age.sshKeyPaths = [
         "/etc/ssh/ssh_host_ed25519_key"
       ];
-      # defaultSopsFile = config.site.paths.secrets.default;
     };
 
     services.dbus.implementation = "broker";

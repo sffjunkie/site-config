@@ -34,7 +34,7 @@ in
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGFugnsOEmySWbh2hIrAjroWAO+PB4RznGnt+oDuERsU ${username}"
         ];
       };
-      hashedPasswordFile = config.sops.secrets."sdk/password_hash".path;
+      hashedPasswordFile = config.sops.secrets."${username}/password_hash".path;
     };
 
     users.groups.media.members = [ username ];
