@@ -1,12 +1,12 @@
 version = 1
 SPDX-PackageName = "Looniversity Site Configuration"
-SPDX-PackageDownloadLocation = "https://github.com/sffjunkie/siteconfig"
+SPDX-PackageDownloadLocation = "https://github.com/sffjunkie/site-config"
 SPDX-PackageSupplier = "Person: Simon Kennedy"
 
 [[annotations]]
 path = "**"
 precedence = "closest"
-SPDX-FileCopyrightText = "2026 Simon Kennedy (https://github.com/sffjunkie/siteconfig/)"
+SPDX-FileCopyrightText = "2026 Simon Kennedy (https://github.com/sffjunkie/site-config/)"
 SPDX-License-Identifier = "MIT"
 
 [[annotations]]
