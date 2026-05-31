@@ -1,10 +1,10 @@
 # Enter the Looniversity
 
 ![OS: NixOS](https://img.shields.io/badge/OS-NixOS-6e9bcb?logo=NixOS)
-![License](https://img.shields.io/github/license/sffjunkie/siteconfig)
-![GitHub repo size](https://img.shields.io/github/repo-size/sffjunkie/siteconfig)
-![GitHub top language](https://img.shields.io/github/languages/top/sffjunkie/siteconfig)
-![GitHub last commit](https://img.shields.io/github/last-commit/sffjunkie/siteconfig)
+![License](https://img.shields.io/github/license/sffjunkie/site-config)
+![GitHub repo size](https://img.shields.io/github/repo-size/sffjunkie/site-config)
+![GitHub top language](https://img.shields.io/github/languages/top/sffjunkie/site-config)
+![GitHub last commit](https://img.shields.io/github/last-commit/sffjunkie/site-config)
 
 ## Code Structure
 
