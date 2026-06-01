@@ -33,6 +33,7 @@ in
 
       packages = [
         pkgs.python3
+        pkgs.uv
         pkgs.rofi-clip
         pkgs.musicctl
         pkgs.volumectl
