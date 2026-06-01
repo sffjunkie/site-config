@@ -6,7 +6,6 @@
       pkgs.git-lfs
       pkgs.nano
       pkgs.pciutils
-      pkgs.pipx
       pkgs.psmisc
       pkgs.unzip
       pkgs.usbutils
