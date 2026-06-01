@@ -41,7 +41,7 @@ in
           HTTP_PORT = http_port;
           DISABLE_REGISTRATION = true;
           COOKIE_SECURE = true;
-          PROTOCOL = "http";
+          PROTOCOL = "https";
 
           SSH_DOMAIN = config.looniversity.network.domainName;
           SSH_PORT = lib.elemAt config.services.openssh.ports 0;
