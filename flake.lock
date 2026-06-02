@@ -525,11 +525,11 @@
         "sops-nix": "sops-nix"
       },
       "locked": {
-        "lastModified": 1780224031,
-        "narHash": "sha256-GNaRYobycI8TOjtXS/ZmpOpbMwLTkT1PGJ14gvbg7NA=",
+        "lastModified": 1780414706,
+        "narHash": "sha256-jqnxTEvNXZ6BMvZ+2AWjMeHO+4xvdj/cqSYMmze18+8=",
         "owner": "sffjunkie",
         "repo": "site-secrets",
-        "rev": "b56a95b2d2256efda913612c345c4b9bf0ac95ab",
+        "rev": "68a74c00918c04cc2d65c0c5c97ba71305bb86de",
         "type": "github"
       },
       "original": {
