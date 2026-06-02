@@ -16,6 +16,13 @@ in
   };
 
   config = mkIf cfg.enable {
+    sops.secrets."netbox/secret_key".owner = "netbox";
+    sops.secrets."netbox/secret_key".group = "netbox";
+    sops.secrets."netbox/password".owner = "netbox";
+    sops.secrets."netbox/password".group = "netbox";
+    sops.secrets."netbox/api_token_pepper".owner = "netbox";
+    sops.secrets."netbox/api_token_pepper".group = "netbox";
+
     services.netbox = {
       inherit port;
       enable = true;
