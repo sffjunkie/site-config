@@ -21,7 +21,7 @@ let
 in
 {
   options.looniversity.desktop.window_manager.lwm = {
-    enable = mkEnableOption "qtile";
+    enable = mkEnableOption "lwm";
     configPath = mkOption {
       type = types.str;
       default = "lwm";
