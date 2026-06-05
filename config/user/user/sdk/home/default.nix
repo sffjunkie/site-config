@@ -43,6 +43,10 @@ in
 
     looniversity = {
       user = {
+        admin = {
+          sqlite = enabled;
+        };
+
         apps = {
           brain = "obsidian";
           browser = "firefox";
