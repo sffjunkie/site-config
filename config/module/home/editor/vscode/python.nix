@@ -53,7 +53,7 @@ in
             ];
             "python.analysis.typeCheckingMode" = "standard";
             "[python]" = {
-              "editor.defaultFormatter" = "ms-python.black-formatter";
+              "editor.defaultFormatter" = "charliermarsh.ruff";
             };
           };
         };
