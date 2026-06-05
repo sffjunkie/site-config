@@ -43,10 +43,6 @@ in
 
     looniversity = {
       user = {
-        admin = {
-          sqlite = enabled;
-        };
-
         apps = {
           brain = "obsidian";
           browser = "firefox";
@@ -76,6 +72,10 @@ in
           general = "libnotify";
           music_track_change = "music-notify";
         };
+      };
+
+      admin = {
+        sqlite = enabled;
       };
 
       audio = {
