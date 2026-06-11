@@ -30,10 +30,8 @@ in
             "markdownlint.config" = {
               "MD033" = false;
             };
-            "markdown.preview.fontSize" = mkIf (!config.stylix.targets.vscode.enable) 12;
-            "markdown.preview.fontFamily" = mkIf (
-              !config.stylix.targets.vscode.enable
-            ) "'JetBrainsMono Nerd Font', 'DejaVu Sans Mono', monospace";
+            "markdown.preview.fontSize" = 12;
+            "markdown.preview.fontFamily" = "'JetBrainsMono Nerd Font', 'DejaVu Sans Mono', monospace";
 
             "[markdown]" = {
               "editor.defaultFormatter" = "yzhang.markdown-all-in-one";

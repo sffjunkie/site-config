@@ -25,6 +25,9 @@ in
       installBatSyntax = true;
 
       settings = {
+        font-family = "JetBrainsMono Nerd Font";
+        font-size = 13;
+
         window-padding-x = 4;
         window-padding-y = 4;
 

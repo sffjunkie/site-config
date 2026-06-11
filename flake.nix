@@ -7,6 +7,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    catppuccin = {
+      url = "github:catppuccin/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,11 +59,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix = {
-      url = "github:danth/stylix/release-26.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     wayland-pipewire-idle-inhibit = {
       url = "github:rafaelrc7/wayland-pipewire-idle-inhibit";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -88,7 +88,7 @@
         ] (system: function nixpkgs.legacyPackages.${system});
 
       siteModules = [
-        (inputs.import-tree ./config/site)
+        # (inputs.import-tree ./config/site)
         (inputs.import-tree ./config/option/site)
         (inputs.import-tree ./config/fixes)
       ];
@@ -97,9 +97,9 @@
         ./config/overlay
         ./config/user/user/common/host
 
+        inputs.catppuccin.nixosModules.catppuccin
         inputs.disko.nixosModules.disko
         # inputs.sops-nix.nixosModules.sops
-        inputs.stylix.nixosModules.stylix
         inputs.nurpkgs.modules.nixos.default
 
         inputs.site-secrets.nixosModules.default
@@ -133,6 +133,7 @@
               sharedModules = [
                 ./config/user/user/common/home
 
+                inputs.catppuccin.homeModules.catppuccin
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeModules.nixvim
                 inputs.wayland-pipewire-idle-inhibit.homeModules.default

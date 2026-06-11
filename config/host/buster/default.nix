@@ -34,12 +34,6 @@ in
       shell.zsh = enabled;
 
       storage.udisks2 = enabled;
-
-      theme = {
-        nord = enabled;
-        papirus = enabled;
-        stylix = enabled;
-      };
     };
 
     environment = {

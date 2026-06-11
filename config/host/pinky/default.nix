@@ -41,10 +41,6 @@ in
 
       service.lldap = disabled;
 
-      theme = {
-        stylix = enabled;
-      };
-
       shell.zsh = enabled;
     };
 

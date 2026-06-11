@@ -68,10 +68,6 @@ in
       };
 
       shell.zsh = enabled;
-
-      theme = {
-        stylix = enabled;
-      };
     };
 
     system.stateVersion = "23.05"; # Did you read the comment?

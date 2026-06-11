@@ -163,8 +163,6 @@ in
           python = enabled;
           shellcheck = enabled;
           toml = enabled;
-
-          theme.catppuccin = enabled;
         };
       };
 
@@ -303,39 +301,6 @@ in
 
     sops = {
       age.keyFile = ageKeyFile;
-    };
-
-    stylix = {
-      enable = true;
-      base16Scheme = "${pkgs.base16-schemes}/share/themes/${config.looniversity.theme.base16}.yaml";
-
-      cursor = {
-        name = "Nordzy-cursors";
-        package = pkgs.nordzy-cursor-theme;
-        size = 32;
-      };
-
-      fonts = {
-        monospace = {
-          name = "JetBrainsMono Nerd Font";
-          package = pkgs.nerd-fonts.jetbrains-mono;
-        };
-
-        sizes = {
-          applications = 13;
-          popups = 13;
-          terminal = 13;
-        };
-      };
-
-      image = ./a2-nier-automata-art-nw-3840x2160.jpg;
-
-      polarity = "dark";
-
-      targets = {
-        firefox.profileNames = [ "default" ];
-        vscode.enable = false;
-      };
     };
   };
 }

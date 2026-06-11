@@ -18,7 +18,7 @@ in
       settings = {
         anchor = "top-right";
         outer-margin = "45,8";
-        font = lib.mkForce "${config.stylix.fonts.monospace.name} ${toString config.stylix.fonts.sizes.popups}";
+        font = lib.mkForce "JetBrainsMono Nerd Font 13";
         border-radius = 5;
 
         "app-name=lde-cal" = {

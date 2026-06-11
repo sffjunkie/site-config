@@ -102,10 +102,6 @@ in
         rclone = enabled;
         upower = enabled;
       };
-
-      theme = {
-        stylix = enabled;
-      };
     };
 
     environment = {

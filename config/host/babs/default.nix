@@ -104,10 +104,6 @@ in
         zfs.autoscrub = enabled;
       };
 
-      theme = {
-        stylix = enabled;
-      };
-
       role = {
         arr_stack = enabled;
         server = enabled;

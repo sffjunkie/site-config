@@ -9,7 +9,6 @@ let
     mkEnableOption
     mkIf
     ;
-  inherit (lib.looniversity) enabled;
 in
 {
   options.looniversity.gui.qutebrowser = {
@@ -17,8 +16,6 @@ in
   };
 
   config = mkIf (cfg.enable || config.looniversity.user.apps.browser == "qutebrowser") {
-    stylix.targets.qutebrowser = enabled;
-
     programs.qutebrowser = {
       enable = true;
 

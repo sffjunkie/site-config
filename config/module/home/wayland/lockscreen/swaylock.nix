@@ -25,7 +25,6 @@ in
 
     programs.swaylock = {
       enable = true;
-      # style set by stylix
     };
 
     services.swayidle = {

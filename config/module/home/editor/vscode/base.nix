@@ -92,7 +92,7 @@ in
             "git.detectWorktrees" = false;
 
             "terminal.integrated.scrollback" = 5000;
-            "terminal.integrated.fontSize" = mkIf (!config.stylix.targets.vscode.enable) 12;
+            "terminal.integrated.fontSize" = 12;
             "terminal.integrated.defaultProfile.linux" = "bash";
 
             "testing.automaticallyOpenTestResults" = "neverOpen";

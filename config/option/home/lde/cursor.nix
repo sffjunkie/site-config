@@ -1,11 +1,8 @@
 {
-  config,
   lib,
   ...
 }:
 let
-  stylixCfg = config.stylix;
-
   inherit (lib) mkOption types;
 in
 {
@@ -13,19 +10,19 @@ in
     package = mkOption {
       description = "Cursor package";
       type = types.nullOr types.package;
-      default = if stylixCfg.enable then config.stylix.cursor.package else null;
+      default = null;
     };
 
     name = mkOption {
       description = "Cursor name";
       type = types.str;
-      default = if stylixCfg.enable then config.stylix.cursor.name else "";
+      default = "";
     };
 
     size = mkOption {
       description = "Cursor size";
       type = types.int;
-      default = if stylixCfg.enable then config.stylix.cursor.size else 24;
+      default = 24;
     };
   };
 }

@@ -18,7 +18,7 @@ in
       settings = {
         location = 6;
       };
-      style = mkIf (!config.stylix.targets.wofi.enable) ''
+      style = ''
         * {
             font-family: "Hack", monospace;
             font-size: 16px;

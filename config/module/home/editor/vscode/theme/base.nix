@@ -13,11 +13,9 @@ in
       profiles = {
         default = {
           userSettings = {
-            "editor.fontFamily" = mkIf (
-              !config.stylix.targets.vscode.enable
-            ) "'JetBrainsMono Nerd Font', 'DejaVu Sans Mono', monospace";
+            "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'DejaVu Sans Mono', monospace";
 
-            "editor.fontSize" = mkIf (!config.stylix.targets.vscode.enable) 12;
+            "editor.fontSize" = 12;
 
             "editor.rulers" = [
               80
