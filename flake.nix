@@ -88,7 +88,6 @@
         ] (system: function nixpkgs.legacyPackages.${system});
 
       siteModules = [
-        # (inputs.import-tree ./config/site)
         (inputs.import-tree ./config/option/site)
         (inputs.import-tree ./config/fixes)
       ];
@@ -99,7 +98,6 @@
 
         inputs.catppuccin.nixosModules.catppuccin
         inputs.disko.nixosModules.disko
-        # inputs.sops-nix.nixosModules.sops
         inputs.nurpkgs.modules.nixos.default
 
         inputs.site-secrets.nixosModules.default
