@@ -21,7 +21,7 @@ in
         lower = "01:00";
         upper = "03:00";
       };
-      flake = "github:sffjunkie/siteconfig";
+      flake = "github:sffjunkie/site-config";
     };
   };
 }
