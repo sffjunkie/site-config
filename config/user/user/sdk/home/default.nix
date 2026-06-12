@@ -180,6 +180,7 @@ in
         brave = enabled;
         darktable = enabled;
         discord = enabled;
+        foliate = enabled;
         gimp = enabled;
         gittyup = enabled;
         gnomeApps = enabled;
