@@ -18,6 +18,7 @@ in
       configPath = "${config.xdg.configHome}/mozilla/firefox";
       profiles = {
         default = {
+          extensions.force = true;
           settings = {
             "browser.ai.control.default" = "blocked";
             "browser.ai.control.linkPreviewKeyPoints" = "blocked";
