@@ -7,7 +7,8 @@
 }:
 let
   cfg = config.looniversity.desktop.lockscreen.swaylock;
-  swaylock = "${pkgs.swaylock}/bin/swaylock -fF";
+  swaylock = "${pkgs.swaylock-effects}/bin/swaylock -fF";
+  indicator-radius = 200;
   inherit (lib) mkEnableOption mkIf;
 in
 {
@@ -25,6 +26,15 @@ in
 
     programs.swaylock = {
       enable = true;
+
+      settings = {
+        clock = true;
+        effect-greyscale = true;
+        image = config.looniversity.user.theme.lockscreen.image;
+        indicator = true;
+        indicator-radius = indicator-radius;
+        indicator-x-position = indicator-radius + 400;
+      };
     };
 
     services.swayidle = {
