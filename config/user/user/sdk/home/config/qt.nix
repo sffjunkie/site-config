@@ -16,8 +16,8 @@
           icon_theme = "Adwaita";
         };
         Fonts = {
-          fixed = "JetBrainsMono Nerd Font,11";
-          general = "JetBrainsMono Nerd Font,11";
+          fixed = "JetBrainsMono Nerd Font,12";
+          general = "JetBrainsMono Nerd Font,12";
         };
       };
     };
