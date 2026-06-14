@@ -9,6 +9,7 @@
     ./modules.nix
     ./nix.nix
     ./packages.nix
+    ./theme.nix
     ./workaround.nix
   ];
 

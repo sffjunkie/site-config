@@ -5,11 +5,11 @@
       enable = true;
       autoEnable = true;
 
-      flavor = config.looniversity.theme.catppuccin.flavor;
+      flavor = config.looniversity.user.theme.catppuccin.flavor;
 
       cursors = {
         enable = true;
-        accent = config.looniversity.theme.catppuccin.accent;
+        accent = config.looniversity.user.theme.catppuccin.accent;
       };
     };
   };
