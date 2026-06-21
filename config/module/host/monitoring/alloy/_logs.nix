@@ -12,7 +12,7 @@ let
             node        = constants.hostname,
             job         = "integrations/node_exporter"
       }'';
-  targets = lib.concatStringsSep "\n" (map strToTarget pathTargets);
+  targets = lib.concatStringsSep ",\n" (map strToTarget pathTargets);
 in
 ''
   // Define which log files to collect for node_exporter
