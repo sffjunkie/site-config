@@ -96,7 +96,6 @@
 
       hostModules = [
         ./config/overlay
-        (inputs.import-tree ./config/user/user/common/host)
 
         (inputs.import-tree ./config/module/host)
         (inputs.import-tree ./config/role/host)
