@@ -17,7 +17,7 @@ in
     programs.nixvim = {
       enable = true;
 
-      extraPackages = [
+      extraPlugins = [
         pkgs.vimPlugins.nvim-web-devicons
       ];
     };
