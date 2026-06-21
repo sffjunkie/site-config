@@ -10,7 +10,7 @@ let
             __address__ = "localhost",
             __path__    = "${target}",
             node        = constants.hostname,
-            job         = "integrations/node_exporter"
+            job         = "integrations/node_exporter",
       }'';
   targets = lib.concatStringsSep ",\n" (map strToTarget pathTargets);
 in
