@@ -44,17 +44,23 @@ in
     };
 
     services.caddy = {
-      enable = true;
-
       virtualHosts = {
-        "netbox.looniversity.net" = {
+        ${netboxHost} = {
           logFormat = ''
-            output file /var/log/caddy/access-netbox.looniversity.net.log {
+            output file /var/log/caddy/access-${netboxHost}.log {
               mode 644
             }
           '';
 
           extraConfig = ''
+            @static {
+              path /static/*
+            }
+
+            @app {
+              not path /static/*
+            }
+
             handle @static {
               file_server
               root /var/lib/netbox/static
@@ -71,6 +77,6 @@ in
 
     looniversity.db.postgresql.hostDatabases.furrball = [ "netbox" ];
 
-    networking.firewall.allowedTCPPorts = [ port ];
+    networking.firewall.allowedTCPPorts = [ netboxPort ];
   };
 }
