@@ -20,6 +20,12 @@ in
       globalConfig = ''
         metrics
       '';
+
+      logFormat = ''
+        output file /var/log/caddy/access.log {
+          mode 644
+        }
+      '';
     };
 
     services.prometheus = {
