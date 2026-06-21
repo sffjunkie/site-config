@@ -33,6 +33,7 @@ in
       openFirewall = true;
 
       backboneInterfaces = [ "lan0" ];
+      interfaceName = cfg.otbr_pan_id;
 
       radio = {
         baudRate = 460800;
