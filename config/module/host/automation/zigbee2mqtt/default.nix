@@ -81,6 +81,13 @@ in
       virtualHosts = {
         "zigbee.${config.looniversity.network.domainName}" = {
           useACMEHost = "${config.looniversity.network.domainName}";
+
+          logFormat = ''
+            output file /var/log/caddy/access-zigbee.looniversity.net.log {
+              mode 644
+            }
+          '';
+
           extraConfig = ''
             reverse_proxy http://127.0.0.1:8080
           '';
