@@ -108,6 +108,8 @@ in
       systemPackages = [
         pkgs.teams-for-linux
         pkgs.zoom-us
+
+        inputs.nix-auth.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
 
       localBinInPath = true;
