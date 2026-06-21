@@ -6,7 +6,9 @@
 }:
 let
   cfg = config.looniversity.service.netbox;
-  port = 9001;
+
+  netboxHost = "netbox.${config.looniversity.network.domainName}";
+  netboxPort = 9001;
 
   inherit (lib) mkEnableOption mkIf;
 in
@@ -24,8 +26,8 @@ in
     sops.secrets."netbox/api_token_pepper".group = "netbox";
 
     services.netbox = {
-      inherit port;
       enable = true;
+      port = netboxPort;
       listenAddress = "0.0.0.0";
       package = pkgs.netbox;
       secretKeyFile = config.sops.secrets."netbox/secret_key".path;
@@ -60,14 +62,7 @@ in
 
             # Handle all other requests by forwarding them to NetBox
             handle @app {
-              reverse_proxy localhost:${toString port}
-            }
-
-            @static {
-              path /static/*
-            }
-            @app {
-              not path /static/*
+              reverse_proxy localhost:${toString netboxPort}
             }
           '';
         };

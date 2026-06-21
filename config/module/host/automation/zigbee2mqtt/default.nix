@@ -8,7 +8,9 @@ let
   mqttHost = lib.looniversity.network.serviceHandlerHost config "mosquitto";
   mqttPort = lib.looniversity.network.serviceHandlerMainPort config "mosquitto";
   adapterDev = "tty.sonoff";
-  port = 8080;
+
+  zigbeeHost = "zigbee.${config.looniversity.network.domainName}";
+  zigbeePort = 8080;
 
   inherit (lib) mkEnableOption mkIf;
 in
@@ -48,8 +50,8 @@ in
 
         frontend = {
           enabled = true;
-          inherit port;
-          url = "https://zigbee.${config.looniversity.network.domainName}";
+          inherit zigbeePort;
+          url = "https://${zigbeeHost}";
         };
 
         homeassistant = {
@@ -67,7 +69,7 @@ in
       };
     };
 
-    networking.firewall.allowedTCPPorts = [ port ];
+    networking.firewall.allowedTCPPorts = [ zigbeePort ];
 
     systemd.services.zigbee2mqtt = {
       requires = [ "mosquitto.service" ];
@@ -79,11 +81,11 @@ in
 
     services.caddy = {
       virtualHosts = {
-        "zigbee.${config.looniversity.network.domainName}" = {
+        ${zigbeeHost} = {
           useACMEHost = "${config.looniversity.network.domainName}";
 
           logFormat = ''
-            output file /var/log/caddy/access-zigbee.looniversity.net.log {
+            output file /var/log/caddy/access-${zigbeeHost}.log {
               mode 644
             }
           '';
