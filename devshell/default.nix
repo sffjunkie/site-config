@@ -20,6 +20,6 @@ pkgs.mkShell {
   ]
   ++ nixosScripts;
   env = {
-    NIX_DEVSHELL_PROJECT = "siteconfig";
+    NIX_DEVSHELL_PROJECT = "site-config";
   };
 }
