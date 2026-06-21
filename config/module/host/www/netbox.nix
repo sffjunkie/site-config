@@ -46,6 +46,12 @@ in
 
       virtualHosts = {
         "netbox.looniversity.net" = {
+          logFormat = ''
+            output file /var/log/caddy/access-netbox.looniversity.net.log {
+              mode 644
+            }
+          '';
+
           extraConfig = ''
             handle @static {
               file_server
