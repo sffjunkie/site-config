@@ -18,9 +18,7 @@ in
       enable = true;
 
       globalConfig = ''
-        metrics {
-          per_host
-        }
+        metrics
       '';
     };
 
