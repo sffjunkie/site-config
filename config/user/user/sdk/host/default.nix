@@ -7,14 +7,6 @@ let
   username = "sdk";
 in
 {
-  imports = [
-    ./backup/local.nix
-    ./backup/nas.nix
-    ./settings
-
-    ../../common/host
-  ];
-
   config = {
     users.users.${username} = {
       isNormalUser = true;

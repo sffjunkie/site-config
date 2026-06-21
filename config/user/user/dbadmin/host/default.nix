@@ -1,8 +1,3 @@
-{
-  config,
-  pkgs,
-  ...
-}:
 let
   username = "dbadmin";
 in

@@ -11,14 +11,6 @@ let
   inherit (lib.looniversity) disabled enabled;
 in
 {
-  imports = [
-    ./accounts
-    ./config
-    ./desktop
-    ./ssh
-  ];
-
-  # config = osConfig.home-manager.users.${user}.config
   config = {
     home = {
       username = "sdk";

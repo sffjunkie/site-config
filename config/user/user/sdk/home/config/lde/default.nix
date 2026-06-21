@@ -11,22 +11,22 @@ let
   formatter = (lib.getAttr format pkgs.formats) { };
   args = { inherit config formatter; };
 
-  app = pkgs.callPackage ./app.nix args;
-  bar = pkgs.callPackage ./bar.nix args;
-  branding = pkgs.callPackage ./branding.nix args;
-  color = pkgs.callPackage ./color.nix args;
-  controller = pkgs.callPackage ./controller.nix args;
-  cursor = pkgs.callPackage ./cursor.nix args;
-  device = pkgs.callPackage ./device.nix args;
-  floating = pkgs.callPackage ./floating.nix args;
-  font = pkgs.callPackage ./font.nix args;
-  group = pkgs.callPackage ./group.nix args;
-  input = pkgs.callPackage ./input.nix args;
-  key = pkgs.callPackage ./key.nix args;
-  layout = pkgs.callPackage ./layout.nix args;
-  match = pkgs.callPackage ./match.nix args;
-  menu = pkgs.callPackage ./menu.nix args;
-  notifier = pkgs.callPackage ./notifier.nix args;
+  app = pkgs.callPackage ./_app.nix args;
+  bar = pkgs.callPackage ./_bar.nix args;
+  branding = pkgs.callPackage ./_branding.nix args;
+  color = pkgs.callPackage ./_color.nix args;
+  controller = pkgs.callPackage ./_controller.nix args;
+  cursor = pkgs.callPackage ./_cursor.nix args;
+  device = pkgs.callPackage ./_device.nix args;
+  floating = pkgs.callPackage ./_floating.nix args;
+  font = pkgs.callPackage ./_font.nix args;
+  group = pkgs.callPackage ./_group.nix args;
+  input = pkgs.callPackage ./_input.nix args;
+  key = pkgs.callPackage ./_key.nix args;
+  layout = pkgs.callPackage ./_layout.nix args;
+  match = pkgs.callPackage ./_match.nix args;
+  menu = pkgs.callPackage ./_menu.nix args;
+  notifier = pkgs.callPackage ./_notifier.nix args;
 in
 {
   config = {

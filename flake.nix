@@ -96,7 +96,10 @@
 
       hostModules = [
         ./config/overlay
-        ./config/user/user/common/host
+        (inputs.import-tree ./config/user/user/common/host)
+
+        (inputs.import-tree ./config/module/host)
+        (inputs.import-tree ./config/role/host)
 
         inputs.catppuccin.nixosModules.catppuccin
         inputs.disko.nixosModules.disko
@@ -114,9 +117,6 @@
         inputs.site-secrets.nixosModules.sdk
         inputs.site-secrets.nixosModules.sysadmin
         inputs.site-secrets.nixosModules.nixos
-
-        (inputs.import-tree ./config/module/host)
-        (inputs.import-tree ./config/role/host)
       ];
 
       homeModules = [
@@ -131,21 +131,33 @@
               };
 
               sharedModules = [
-                ./config/user/user/common/home
+                (inputs.import-tree ./config/option/home)
+
+                (inputs.import-tree ./config/module/home)
+                (inputs.import-tree ./config/role/home)
+
+                (inputs.import-tree ./config/user/user/common/home)
 
                 inputs.catppuccin.homeModules.catppuccin
                 inputs.sops-nix.homeManagerModules.sops
                 inputs.nixvim.homeModules.nixvim
                 inputs.wayland-pipewire-idle-inhibit.homeModules.default
-
-                (inputs.import-tree ./config/option/home)
-                (inputs.import-tree ./config/module/home)
-                (inputs.import-tree ./config/role/home)
               ];
             };
           };
         }
       ];
+
+      mkNixosUser =
+        name:
+        [
+          (inputs.import-tree ./config/user/user/${name}/host)
+        ]
+        ++ [
+          {
+            config.home-manager.users.${name} = (inputs.import-tree ./config/user/user/${name}/home);
+          }
+        ];
 
       mkNixosSystem =
         { modules, ... }:
@@ -187,47 +199,46 @@
         pinky = mkNixosSystem {
           modules = [
             ./config/host/pinky
-            ./config/user/user/sysadmin
-          ];
+          ]
+          ++ (mkNixosUser "sysadmin");
         };
 
         # Services
         thebrain = mkNixosSystem {
           modules = [
             ./config/host/thebrain
-            ./config/user/user/dbadmin
-            ./config/user/user/sysadmin
             ./config/user/group/media
-          ];
+          ]
+          ++ (mkNixosUser "sysadmin");
         };
 
         # Workstation
         furrball = mkNixosSystem {
           modules = [
             ./config/host/furrball
-            ./config/user/user/sdk
-            ./config/user/user/sysadmin
             ./config/user/group/media
-          ];
+          ]
+          ++ (mkNixosUser "sdk")
+          ++ (mkNixosUser "sysadmin");
         };
 
         # Storage
         babs = mkNixosSystem {
           modules = [
             ./config/host/babs
-            ./config/user/user/sysadmin
             ./config/user/group/media
-          ];
+          ]
+          ++ (mkNixosUser "sysadmin");
         };
 
         # Laptop
         buster = mkNixosSystem {
           modules = [
             ./config/host/buster
-            ./config/user/user/sdk
-            ./config/user/user/sysadmin
             ./config/user/group/media
-          ];
+          ]
+          ++ (mkNixosUser "sdk")
+          ++ (mkNixosUser "sysadmin");
         };
 
         # Installer ISO - Use `nixos-rebuild build-image`

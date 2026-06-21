@@ -1,14 +1,12 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
   config = {
     qt = {
       enable = true;
-      platformTheme.name = "qtct";
-      style = {
-        name = "kvantum";
-      };
-
       kvantum.enable = true;
+
+      platformTheme.name = "qtct";
+      style.name = "kvantum";
 
       qt6ctSettings = {
         Appearance = {
@@ -22,10 +20,14 @@
       };
     };
     # catppuccin.qt5ct.enable = true;
-    catppuccin.kvantum = {
+    catppuccin = {
       enable = true;
-      flavor = config.looniversity.user.theme.catppuccin.flavor;
-      accent = config.looniversity.user.theme.catppuccin.accent;
+      qt5ct.enable = true;
+      kvantum = {
+        enable = true;
+        flavor = config.looniversity.user.theme.catppuccin.flavor;
+        accent = config.looniversity.user.theme.catppuccin.accent;
+      };
     };
   };
 }
