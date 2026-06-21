@@ -54,6 +54,10 @@ in
         tv_shows = enabled;
       };
 
+      network = {
+        service.reverse_proxy.caddy.enable = true;
+      };
+
       role = {
         log_server = enabled;
         server = enabled;
