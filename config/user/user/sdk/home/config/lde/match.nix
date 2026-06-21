@@ -43,6 +43,7 @@ formatter.generate "desktop-match" {
         }
       ];
       xdg-desktop-portal-gtk = [ { appid = "xdg-desktop-portal-gtk"; } ];
+      wdisplays = [ { appid = "wdisplays"; } ];
     };
   };
 }
