@@ -36,6 +36,8 @@ in
       ];
     };
 
+    looniversity.monitoring.alloy.pathTargets = [ "/var/log/caddy/*.log" ];
+
     networking.firewall.allowedTCPPorts = [
       80
       443
