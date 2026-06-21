@@ -7,19 +7,17 @@
 let
   strToTarget = target: ''
     {
-            __address__ = "localhost",
-            __path__    = "${target}",
-            node        = constants.hostname,
-            job         = "integrations/node_exporter",
-      }'';
+      __address__ = "localhost",
+      __path__    = "${target}",
+      node        = constants.hostname,
+      job         = "integrations/node_exporter",
+    }'';
   targets = lib.concatStringsSep ",\n" (map strToTarget pathTargets);
 in
 ''
   // Define which log files to collect for node_exporter
   local.file_match "${node}_log" {
-    path_targets = [
-      ${targets}
-    ]
+    path_targets = [${targets}]
   }
 
   // Collect logs from files for node_exporter
