@@ -4,13 +4,20 @@
 }:
 formatter.generate "desktop-floating" {
   floating.matches = [
-    "freecad-open"
-    "gnome-calculator"
-    "gnome-characters"
-    "orca-slicer-saveas"
-    "pavucontrol"
-    "slurm"
-    "waypaper"
-    "xdg-desktop-portal-gtk"
+    { match = "freecad-open"; }
+    { match = "gnome-calculator"; }
+    { match = "gnome-characters"; }
+    { match = "orca-slicer-saveas"; }
+    { match = "pavucontrol"; }
+    { match = "slurm"; }
+    { match = "waypaper"; }
+    {
+      match = "wdisplays";
+      size = [
+        1024
+        800
+      ];
+    }
+    { match = "xdg-desktop-portal-gtk"; }
   ];
 }
