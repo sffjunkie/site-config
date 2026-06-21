@@ -6,6 +6,8 @@
 }:
 let
   cfg = config.looniversity.monitoring.alloy;
+  targets = cfg.pathTargets ++ [ "/var/log/{syslog,messages,*.log}" ];
+
   port = lib.looniversity.network.serviceHandlerMainPort config "alloy";
   lokiHost = lib.looniversity.network.serviceHandlerHost config "loki";
   lokiPort = lib.looniversity.network.serviceHandlerMainPort config "loki";
@@ -31,6 +33,7 @@ let
   logs = pkgs.callPackage ./_logs.nix {
     inherit config lib;
     inherit (config.looniversity.monitoring.alloy) node;
+    pathTargets = targets;
   };
   metrics = pkgs.callPackage ./_metrics.nix {
     inherit config lib;
@@ -82,6 +85,11 @@ in
       type = types.bool;
       default = false;
       description = "Enable live debugging";
+    };
+
+    pathTargets = mkOption {
+      type = types.listOf types.str;
+      default = [ ];
     };
   };
 
