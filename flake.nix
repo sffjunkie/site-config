@@ -31,6 +31,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-auth.url = "github:numtide/nix-auth";
+
     nix-index = {
       url = "github:nix-community/nix-index";
       inputs.nixpkgs.follows = "nixpkgs";
