@@ -7,7 +7,10 @@
         "flakes"
       ];
       warn-dirty = false;
-      trusted-users = [ "sdk" ];
+      trusted-users = [
+        "sdk"
+        "sysadmin"
+      ];
     };
 
     nix.channel.enable = lib.mkForce false;
