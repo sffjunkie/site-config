@@ -1,10 +1,28 @@
 {
   lib,
   osConfig,
+  pkgs,
   ...
 }:
 let
   inherit (lib) mkOption types;
+
+  fontDef = types.submodule {
+    options = {
+      family = mkOption {
+        type = types.str;
+        default = "JetBrainsMono Nerd Font";
+      };
+      size = mkOption {
+        type = types.int;
+        default = 12; # pt
+      };
+      package = mkOption {
+        type = types.package;
+        default = pkgs.nerd-fonts.jetbrains-mono;
+      };
+    };
+  };
 in
 {
   options.looniversity.user.theme = {
@@ -45,6 +63,20 @@ in
         description = "Cursor size";
         type = types.int;
         default = -1;
+      };
+    };
+
+    font = {
+      content = mkOption {
+        type = fontDef;
+      };
+
+      ui = mkOption {
+        type = fontDef;
+      };
+
+      icon = mkOption {
+        type = fontDef;
       };
     };
 

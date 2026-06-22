@@ -1,5 +1,7 @@
 { config, ... }:
 let
+  contentFont = config.looniversity.user.theme.font.content;
+
   qtctSettings = {
     Appearance = {
       style = "kvantum";
@@ -7,8 +9,8 @@ let
       standard_dialogs = "xdgdesktopportal";
     };
     Fonts = {
-      fixed = "JetBrainsMono Nerd Font,13";
-      general = "JetBrainsMono Nerd Font,13";
+      fixed = "${contentFont.family},${toString contentFont.size}";
+      general = "${contentFont.family},${toString contentFont.size}";
     };
   };
 in

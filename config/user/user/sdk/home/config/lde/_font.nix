@@ -1,32 +1,20 @@
 {
+  config,
   formatter,
-  pkgs,
   ...
 }:
 formatter.generate "desktop-font" {
   font = {
-    text = {
-      family = "JetBrainsMono Nerd Font";
-      package = pkgs.nerd-fonts.jetbrains-mono;
+    content = {
+      family = config.looniversity.user.theme.font.content.family;
       size = 16;
     };
     ui = {
-      family = "JetBrainsMono Nerd Font";
+      family = config.looniversity.user.theme.font.ui.family;
       size = 16;
     };
     icon = {
-      family = "Material Design Icons";
-      package = pkgs.material-design-icons;
-      size = 22;
-    };
-    weather = {
-      family = "Hack Nerd Font";
-      package = pkgs.nerd-fonts.hack;
-      size = 22;
-    };
-    logo = {
-      family = "Hack Nerd Font";
-      package = pkgs.nerd-fonts.hack;
+      family = config.looniversity.user.theme.font.icon.family;
       size = 22;
     };
   };
