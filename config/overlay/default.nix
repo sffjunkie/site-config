@@ -1,4 +1,4 @@
-{ config, inputs, ... }:
+{ config, self, ... }:
 {
   config = {
     nixpkgs.overlays = [

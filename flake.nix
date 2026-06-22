@@ -73,6 +73,7 @@
 
   outputs =
     {
+      self,
       nixpkgs,
       home-manager,
       ...
@@ -166,6 +167,7 @@
               inputs
               lib
               ns
+              self
               ;
           };
 
@@ -187,6 +189,7 @@
 
     in
     {
+      inherit self;
       meta = {
         description = "Looniversity Site Configuration";
         homepage = "https://github.com/sffjunkie/siteconfig";
@@ -247,6 +250,10 @@
           ];
         };
       };
+
+      packages = forAllSystems (pkgs: {
+        default = import ./package { inherit pkgs; };
+      });
 
       devShells = forAllSystems (pkgs: {
         default = import ./devshell { inherit pkgs; };

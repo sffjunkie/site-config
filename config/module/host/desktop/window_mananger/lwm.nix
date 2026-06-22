@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   osConfig,
   pkgs,
@@ -7,6 +8,12 @@
 }:
 let
   cfg = config.looniversity.desktop.window_manager.lwm;
+
+  qtilePkg =
+    if cfg.dev then
+      inputs.qtile.packages.${pkgs.stdenv.hostPlatform.system}.default
+    else
+      cfg.python.pkgs.qtile;
 
   reloadScript = pkgs.writeShellScriptBin "lwm_reload" ''
     ${pkgs.python3.pkgs.qtile}/bin/qtile cmd-obj -o cmd -f reload_config

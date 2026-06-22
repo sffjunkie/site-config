@@ -37,11 +37,12 @@ in
         };
 
         server = {
-          DOMAIN = git_fqdn;
+          PROTOCOL = "http";
+          DOMAIN = "localhost";
+          HTTP_ADDR = "0.0.0.0";
           HTTP_PORT = http_port;
           DISABLE_REGISTRATION = true;
           COOKIE_SECURE = true;
-          PROTOCOL = "https";
 
           SSH_DOMAIN = config.looniversity.network.domainName;
           SSH_PORT = lib.elemAt config.services.openssh.ports 0;
@@ -52,9 +53,8 @@ in
     };
 
     services.caddy = {
-      enable = true;
       virtualHosts = {
-        "${git_fqdn}" = {
+        ${git_fqdn} = {
           extraConfig = ''
             reverse_proxy http://:${toString http_port}
           '';
