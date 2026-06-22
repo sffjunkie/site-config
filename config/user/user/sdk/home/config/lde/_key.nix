@@ -10,12 +10,12 @@ formatter.generate "desktop-key" {
       hyper = "mod3";
       shift = "shift";
       cmd = "mod4";
+      super = "mod4";
     };
     modifier_group = {
       # Launch an application
       app_launch = [
         "cmd"
-        "alt"
       ];
 
       fnbar_app_control = [
