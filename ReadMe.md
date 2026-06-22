@@ -15,6 +15,7 @@
 
 ### `config`
 
+- `fixes` - nix code to workaround build issues
 - `host` - host machine configuration
 - `module` - NixOS modules
 - `overlay` - add packages to the `pkgs` instance
