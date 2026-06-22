@@ -28,7 +28,7 @@ in
       enable = true;
 
       settings = {
-        clock = true;
+        clock = config.looniversity.user.theme.lockscreen.clock;
         effect-greyscale = true;
         image = config.looniversity.user.theme.lockscreen.image;
         indicator = true;

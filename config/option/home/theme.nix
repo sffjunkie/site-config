@@ -82,6 +82,12 @@ in
         default = null;
         description = "lock screen background image";
       };
+
+      clock = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Show clock";
+      };
     };
   };
 }
