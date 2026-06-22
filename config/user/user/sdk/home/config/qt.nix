@@ -1,28 +1,31 @@
-{ config, lib, ... }:
+{ config, ... }:
+let
+  qtctSettings = {
+    Appearance = {
+      style = "kvantum";
+      icon_theme = "Adwaita";
+      standard_dialogs = "xdgdesktopportal";
+    };
+    Fonts = {
+      fixed = "JetBrainsMono Nerd Font,13";
+      general = "JetBrainsMono Nerd Font,13";
+    };
+  };
+in
 {
   config = {
     qt = {
       enable = true;
-      kvantum.enable = true;
 
       platformTheme.name = "qtct";
       style.name = "kvantum";
 
-      qt6ctSettings = {
-        Appearance = {
-          style = "kvantum";
-          icon_theme = "Adwaita";
-        };
-        Fonts = {
-          fixed = "JetBrainsMono Nerd Font,12";
-          general = "JetBrainsMono Nerd Font,12";
-        };
-      };
+      qt5ctSettings = qtctSettings;
+      qt6ctSettings = qtctSettings;
     };
-    # catppuccin.qt5ct.enable = true;
+
     catppuccin = {
       enable = true;
-      qt5ct.enable = true;
       kvantum = {
         enable = true;
         flavor = config.looniversity.user.theme.catppuccin.flavor;
