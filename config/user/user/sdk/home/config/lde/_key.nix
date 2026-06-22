@@ -18,6 +18,11 @@ formatter.generate "desktop-key" {
         "cmd"
       ];
 
+      fnbar_app_launch = [
+        "cmd"
+        "alt"
+      ];
+
       fnbar_app_control = [
         "cmd"
       ];
