@@ -17,10 +17,6 @@ let
         type = types.int;
         default = 12; # pt
       };
-      package = mkOption {
-        type = types.package;
-        default = pkgs.nerd-fonts.jetbrains-mono;
-      };
     };
   };
 in
