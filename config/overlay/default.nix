@@ -1,4 +1,4 @@
-{ config, self, ... }:
+{ self, ... }:
 {
   config = {
     nixpkgs.overlays = [
@@ -7,18 +7,23 @@
           doCheck = !prev.stdenv.hostPlatform.isi686;
         };
       })
-      (post: pre: {
-        rofi-app-launcher = pre.callPackage ./rofi-app-launcher { };
-        rofi-lwm-menu = pre.callPackage ./rofi-lwm-menu { };
-        rofi-system-menu = pre.callPackage ./rofi-system-menu { };
-        rofi-clip = pre.callPackage ./rofi-clip { };
-        sshot = pre.callPackage ./sshot { };
-        musicctl = pre.callPackage ./musicctl { };
-        volumectl = pre.callPackage ./volumectl { };
-        music-notify = pre.callPackage ./music-notify {
-          musicMount = config.looniversity.mount.music.mount_point;
-        };
-      })
+      (
+        _: prev:
+        let
+          system = prev.stdenv.hostPlatform.system;
+          packages = self.packages.${system}.default;
+        in
+        {
+          rofi-app-launcher = packages.rofi-app-launcher;
+          rofi-lwm-menu = packages.rofi-lwm-menu;
+          rofi-system-menu = packages.rofi-system-menu;
+          rofi-clip = packages.rofi-clip;
+          sshot = packages.sshot;
+          musicctl = packages.musicctl;
+          music-notify = packages.music-notify;
+          volumectl = packages.volumectl;
+        }
+      )
     ];
   };
 }
