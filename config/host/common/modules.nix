@@ -6,8 +6,6 @@ in
   config = {
     looniversity = {
       security = {
-        age = enabled;
-        sops = enabled;
         polkit = enabled;
       };
     };
