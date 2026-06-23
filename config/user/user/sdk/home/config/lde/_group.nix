@@ -37,6 +37,7 @@ formatter.generate "desktop-group" {
       {
         name = "MISC";
         layout = "max";
+        matches = [ "qtcreator" ];
       }
     ];
   };
