@@ -22,7 +22,7 @@ in
     exposeUI = mkOption {
       type = types.bool;
       default = false;
-      description = "If true expose the alloy UI to the network";
+      description = "If true expose the loki UI to the network";
     };
   };
 
