@@ -52,7 +52,9 @@ in
       keyboard.input-remapper = disabled;
 
       monitoring = {
-        alloy = enabled;
+        alloy = enabled // {
+          exposeUI = true;
+        };
       };
 
       mount = {
