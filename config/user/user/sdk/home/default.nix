@@ -220,7 +220,6 @@ in
       script = {
         linkhandler = enabled;
         paths = enabled;
-        sysinfo = enabled;
       };
 
       security = {
