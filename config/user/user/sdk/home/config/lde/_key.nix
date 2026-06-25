@@ -245,7 +245,7 @@ formatter.generate "desktop-key" {
       }
       {
         key = "F9";
-        modifier_group = "app_launch";
+        modifier_group = "fnbar_app_launch";
         command = "lwm:spawn:notifier.music_track_change";
         desc = "Show latest music notification";
       }
