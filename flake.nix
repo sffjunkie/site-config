@@ -251,9 +251,7 @@
         };
       };
 
-      packages = forAllSystems (pkgs: {
-        default = import ./package { inherit pkgs; };
-      });
+      packages = forAllSystems (pkgs: (import ./package { inherit pkgs; }));
 
       devShells = forAllSystems (pkgs: {
         default = import ./devshell { inherit pkgs; };
