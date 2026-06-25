@@ -97,9 +97,7 @@ in
     services.alloy = {
       enable = true;
       configPath = "${toString configFile}";
-      extraFlags = lib.optional cfg.exposeUI [
-        "--server.http.listen-addr=0.0.0.0:${toString port}"
-      ];
+      extraFlags = lib.optional cfg.exposeUI "--server.http.listen-addr=0.0.0.0:${toString port}";
     };
 
     networking.firewall.allowedTCPPorts = [ port ];
