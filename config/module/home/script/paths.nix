@@ -12,14 +12,10 @@ let
     set -e
     set -u
 
-    print_path() {
-      [ -d "$1" ] && echo "$1" || echo -e '\033[1;30m'"$1"'\033[0m'
-    }
-
     IFS=':' read -ra paths <<< "''${1:-''$PATH}"
     for i in "''${paths[@]}"
     do
-      print_path "$i"
+      [ -d "$i" ] && echo "$i" || echo -e '\033[1;30m'"$i"'\033[0m'
     done
   '';
 in
