@@ -55,6 +55,7 @@ in
             "[python]" = {
               "editor.defaultFormatter" = "charliermarsh.ruff";
             };
+            "python.useEnvironmentsExtension" = true;
           };
         };
       };
