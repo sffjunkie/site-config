@@ -8,7 +8,7 @@ in
 formatter.generate "desktop-bar" {
   bar = {
     top = {
-      height = 38;
+      size = 38;
       margin = [
         margin
         margin
@@ -18,7 +18,7 @@ formatter.generate "desktop-bar" {
       opacity = 0.8;
     };
     bottom = {
-      height = 38;
+      size = 38;
       margin = [
         0
         margin
