@@ -274,6 +274,7 @@ in
 
       theme = {
         rofi = enabled;
+        catppuccin = enabled;
       };
 
       tui = {
