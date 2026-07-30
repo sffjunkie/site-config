@@ -39,10 +39,6 @@ in
         };
       };
 
-      media = {
-        jellyfin = enabled;
-      };
-
       monitoring = {
         alloy = enabled;
       };
