@@ -58,7 +58,7 @@ in
           ];
           olcDatabase = "{1}mdb";
           olcDbDirectory = "/var/lib/openldap/data";
-          olcRootPW.path = config.sops.secrets.openldap-rootpw.path;
+          olcRootPW.path = config.sops.secrets."openldap/root_pw".path;
           olcRootDN = "cn=admin,${baseDN}";
           olcSuffix = "${baseDN}";
           olcAccess = [
@@ -156,7 +156,7 @@ in
       };
     };
 
-    sops.secrets.openldap-rootpw.owner = "openldap";
+    sops.secrets."openldap/root_pw".owner = "openldap";
 
     networking.firewall.interfaces.allowedTCPPorts = [ 389 ];
   };
