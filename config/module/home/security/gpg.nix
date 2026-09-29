@@ -24,7 +24,7 @@ in
       enable = true;
       enableSshSupport = true;
       defaultCacheTtl = 1800;
-      pinentry.package = pkgs.pinentry-gtk2;
+      pinentry.package = pkgs.pinentry-gnome3;
     };
   };
 }
