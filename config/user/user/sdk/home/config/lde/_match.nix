@@ -42,6 +42,7 @@ formatter.generate "desktop-match" {
           title = "slurm";
         }
       ];
+      steam = [ { appid = "steamwebhelper"; } ];
       xdg-desktop-portal-gtk = [ { appid = "xdg-desktop-portal-gtk"; } ];
       wdisplays = [ { appid = "wdisplays"; } ];
       qtcreator = [ { appid = "org.qt-project.qtcreator"; } ];
