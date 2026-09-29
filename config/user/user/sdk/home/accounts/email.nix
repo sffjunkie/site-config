@@ -22,7 +22,7 @@ in
         realName = "Simon Kennedy";
         address = "sdk@looniversity.lan";
 
-        passwordCommand = "${pkgs.pinentry-gtk2}/bin/pinentry";
+        passwordCommand = "${pkgs.pinentry-gnome3}/bin/pinentry";
         mbsync = {
           enable = true;
           create = "maildir";
