@@ -52,10 +52,6 @@ in
       };
     };
 
-    environment.systemPackages = [
-      pkgs.pinentry-gtk2
-    ];
-
     boot.initrd.kernelModules = [
       "intel_lpss"
       "intel_lpss_pci"
