@@ -66,9 +66,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    zmx = {
-      url = "github:neurosnap/zmx";
-    };
+    # zmx = {
+    #   url = "github:neurosnap/zmx";
+    # };
   };
 
   outputs =
