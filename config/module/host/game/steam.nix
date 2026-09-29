@@ -23,6 +23,7 @@ in
 
       extest = enabled;
       gamescopeSession = enabled;
+      protontricks.enable = true;
 
       extraPackages = [ pkgs.hidapi ];
 
