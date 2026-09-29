@@ -240,7 +240,7 @@ in
 
       shell = {
         nushell = enabled;
-        zmx = enabled;
+        # zmx = enabled;
         zsh = enabled // {
           initContent = ''
             bindkey ^f autosuggest-accept
