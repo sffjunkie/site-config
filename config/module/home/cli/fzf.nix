@@ -16,6 +16,7 @@ in
     programs.fzf = {
       enable = true;
       enableZshIntegration = true;
+      historyWidget.command = "";
       # colors = {
       #   fg = "#D8DEE9";
       #   bg = "#2E3440";
