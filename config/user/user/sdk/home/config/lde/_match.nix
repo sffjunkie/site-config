@@ -16,29 +16,25 @@ formatter.generate "desktop-match" {
       darktable = [ { appid = "Darktable"; } ];
       eldenring = [ { appid = "steam_app_1245620"; } ];
       firefox = [ { appid = "firefox"; } ];
-      gimp = [ { appid = "Gimp-\d+.\d+"; } ];
-      gnome-calculator = [ { appid = "org\.gnome\.Calculator"; } ];
-      gnome-characters = [ { appid = "org\.gnome\.Characters"; } ];
-      inkscape = [ { appid = "org\.inkscape\.Inkscape"; } ];
-      obsidian = [ { appid = "obsidian"; } ];
-      pavucontrol = [ { appid = "org.pulseaudio.pavucontrol"; } ];
-      vscode = [
-        { appid = "code"; }
-        { appid = "code-url-handler"; }
-      ];
-      waypaper = [ { appid = "waypaper"; } ];
       freecad-open = [
         {
           appid = "org.freecad.FreeCAD";
           title = "Open document";
         }
       ];
+      gimp = [ { appid = "Gimp-\d+.\d+"; } ];
+      gnome-calculator = [ { appid = "org\.gnome\.Calculator"; } ];
+      gnome-characters = [ { appid = "org\.gnome\.Characters"; } ];
+      inkscape = [ { appid = "org\.inkscape\.Inkscape"; } ];
+      obsidian = [ { appid = "obsidian"; } ];
       orca-slicer-saveas = [
         {
           appid = "orca-slicer";
           title = "Save file as";
         }
       ];
+      pavucontrol = [ { appid = "org.pulseaudio.pavucontrol"; } ];
+      qtcreator = [ { appid = "org.qt-project.qtcreator"; } ];
       slurm = [
         {
           appid = "com.mitchellh.ghostty";
@@ -46,9 +42,13 @@ formatter.generate "desktop-match" {
         }
       ];
       steam = [ { appid = "steamwebhelper"; } ];
+      vscode = [
+        { appid = "code"; }
+        { appid = "code-url-handler"; }
+      ];
+      waypaper = [ { appid = "waypaper"; } ];
       xdg-desktop-portal-gtk = [ { appid = "xdg-desktop-portal-gtk"; } ];
       wdisplays = [ { appid = "wdisplays"; } ];
-      qtcreator = [ { appid = "org.qt-project.qtcreator"; } ];
     };
   };
 }
