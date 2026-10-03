@@ -11,7 +11,10 @@ formatter.generate "desktop-match" {
         }
       ];
       chrome = [ { appid = "chromium"; } ];
+      darksouls = [ { appid = "steam_app_570940"; } ];
+      darksoulsII = [ { appid = "steam_app_335300"; } ];
       darktable = [ { appid = "Darktable"; } ];
+      eldenring = [ { appid = "steam_app_1245620"; } ];
       firefox = [ { appid = "firefox"; } ];
       gimp = [ { appid = "Gimp-\d+.\d+"; } ];
       gnome-calculator = [ { appid = "org\.gnome\.Calculator"; } ];
